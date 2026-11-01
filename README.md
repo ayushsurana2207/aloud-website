@@ -19,7 +19,7 @@ npm test
 ```
 See stored emails: `npx wrangler d1 execute aloud-early-access --local --command "SELECT * FROM early_access"`
 
-> Until a domain is verified in Resend, the thank-you mail is sent from `onboarding@resend.dev` and **only delivers to the email your Resend account is registered with**. Other signups are still stored; the send error is logged.
+> The thank-you mail is sent from `support@aloudedu.com` (set in `wrangler.toml`). It only delivers once `aloudedu.com` is verified in Resend; until then signups are still stored and the send error is logged.
 
 ## Deploy (first time)
 1. `npx wrangler login`
@@ -28,9 +28,9 @@ See stored emails: `npx wrangler d1 execute aloud-early-access --local --command
 4. In the Cloudflare dashboard: Workers & Pages → Create → Pages → connect this GitHub repo. Build command: none. Output directory: `public`.
 5. In the Pages project settings, add the secret `RESEND_API_KEY` (and bind D1 as `DB` if it isn't picked up from `wrangler.toml`).
 
-## Going live with your own domain
-1. Add the domain in Resend → Domains, and add the DNS records it shows.
-2. In `wrangler.toml` set `FROM_EMAIL = "Aloud <hello@yourdomain>"` and `REPLY_TO` to your contact address.
-3. Update the contact email in the footer of `public/index.html`.
+## Domain: aloudedu.com
+1. **Email sending:** in Resend → Domains, add `aloudedu.com` and add the DNS records it shows (SPF, DKIM, and optionally DMARC) at your DNS provider. Wait for "Verified".
+2. **Website:** in the Cloudflare Pages project → Custom domains, add `aloudedu.com` and `www.aloudedu.com`.
+3. Sender, reply-to and the site's contact address are all `support@aloudedu.com`. To change them, edit `wrangler.toml` and the footers of the three pages in `public/`.
 
 See stored emails in production: `npx wrangler d1 execute aloud-early-access --remote --command "SELECT email, created_at FROM early_access ORDER BY id DESC"`

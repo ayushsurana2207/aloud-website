@@ -3,9 +3,9 @@ pages_build_output_dir = "public"
 compatibility_date = "2025-09-01"
 
 [vars]
-# shortcut: Resend's test sender only delivers to the Resend account owner; switch to "Aloud <hello@yourdomain>" once the domain is verified in Resend.
-FROM_EMAIL = "Aloud <onboarding@resend.dev>"
-REPLY_TO = "ayushsurana3@gmail.com"
+# The aloudedu.com domain must be verified in Resend (Domains) for this sender to deliver.
+FROM_EMAIL = "Aloud <support@aloudedu.com>"
+REPLY_TO = "support@aloudedu.com"
 
 [[d1_databases]]
 binding = "DB"

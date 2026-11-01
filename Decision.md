@@ -34,3 +34,8 @@
 **Decision:** Add static `public/privacy.html` and `public/terms.html` in the site's design, written to match what the site actually does (email + user agent stored in D1, Resend for mail, Google Fonts, no cookies or analytics). The popup links to both; legal-page CTAs link to `/#access`, which opens the form on the home page.
 **Why:** The site collects emails, so it needs a privacy policy before launch. Describing only real data flows keeps the policy accurate.
 **Alternatives considered:** Generated boilerplate from a policy generator — generic and lists practices we don't have. Not lawyer-reviewed; no governing-law clause until the company's legal entity and jurisdiction are set.
+
+## 2026-11-01 — Send from support@aloudedu.com
+**Decision:** Thank-you mail is sent from `Aloud <support@aloudedu.com>` with reply-to `support@aloudedu.com`, and that address replaces the temporary Gmail contact on all pages. Supersedes the temporary Resend test sender (`onboarding@resend.dev`) noted in "Resend for the thank-you email".
+**Why:** The owner bought aloudedu.com; a verified own-domain sender delivers to anyone and lets professors reply straight to support.
+**Alternatives considered:** A separate `noreply@`/`hello@` sender — the owner has one support mailbox, and replies to the thank-you mail should reach it.

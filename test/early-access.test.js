@@ -21,7 +21,7 @@ function fakeDb() {
 
 let env, sent, resendOk;
 beforeEach(() => {
-  env = { DB: fakeDb(), RESEND_API_KEY: 're_test', FROM_EMAIL: 'Aloud <onboarding@resend.dev>' };
+  env = { DB: fakeDb(), RESEND_API_KEY: 're_test', FROM_EMAIL: 'Aloud <support@aloudedu.com>' };
   sent = [];
   resendOk = true;
   globalThis.fetch = async (url, init) => {
