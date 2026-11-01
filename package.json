@@ -1,0 +1,15 @@
+{
+  "name": "aloud-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "db:migrate:local": "wrangler d1 migrations apply aloud-early-access --local",
+    "db:migrate:remote": "wrangler d1 migrations apply aloud-early-access --remote",
+    "test": "node --test test/",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "3.114.17"
+  }
+}

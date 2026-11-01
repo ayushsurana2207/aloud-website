@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Secrets (Resend API key lives in .dev.vars)
+.dev.vars
+.env
+.env.*
+!.dev.vars.example
+
+# Wrangler local state (local D1 database, build output)
+.wrangler/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test artifacts
+test-results/
+screenshots/

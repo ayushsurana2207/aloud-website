@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aloud: spoken checks for every student</title>
+<meta name="description" content="Aloud gives each student a short spoken viva on what you taught. They explain their reasoning out loud, an AI examiner asks the follow-up, and you see, topic by topic, who understood.">
+<meta property="og:title" content="Aloud: spoken checks for every student">
+<meta property="og:description" content="Hear how every student thinks. Short spoken vivas for university courses.">
+<meta name="theme-color" content="#0E1312">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='8' fill='%230E1312'/%3E%3Cg transform='translate(6 6) scale(.667)' fill='none' stroke='%235FD3C1' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 10v4M9.5 6v12M14.5 8.5v7M19 11v2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Aloud, home">
+      <span class="logo-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5FD3C1" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 10v4M9.5 6v12M14.5 8.5v7M19 11v2"/></svg></span>
+      Aloud
+    </a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="#how">How it works</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#trust">Student data</a>
+      <a href="#professors">What professors say</a>
+      <button type="button" class="btn btn-sm" data-open-access>Request early access</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="wrap hero">
+  <div class="stack hero-copy">
+    <span class="pill">Spoken checks for university courses</span>
+    <h1>Hear how every student thinks.</h1>
+    <p class="lead">Aloud gives each student a short spoken viva on what you taught. They explain their reasoning out loud, an AI examiner asks the follow-up, and you see, topic by topic, who understood.</p>
+    <div><button type="button" class="btn" data-open-access>Request early access</button></div>
+    <span class="small-note">For programming, maths, science and humanities courses. Built for classes of 20 or 500.</span>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="viva-card">
+      <div class="viva-meta"><span>Intro to Programming · Question 3 of 8</span><span style="font-family: var(--mono)">1:24</span></div>
+      <span class="viva-q">What does average([]) do, and why?</span>
+<div class="code"><span class="kw">def</span> <span class="fn">average</span>(nums):
+    total = <span class="num">0</span>
+    <span class="kw">for</span> n <span class="kw">in</span> nums:
+        total += n
+    <span class="kw">return</span> total / <span class="fn">len</span>(nums)</div>
+      <div class="mic-row">
+        <span class="mic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></span>
+        <div class="wave" id="wave"></div>
+      </div>
+      <p class="answer">"…the loop never runs, so total stays 0, and then it divides by len, which is zero. So it crashes."</p>
+      <p class="followup">Right. How would you make it safe, and what should it return?</p>
+    </div>
+
+    <div class="class-card">
+      <span class="meta">Week 6 check · 268 of 412 heard</span>
+      <span class="title">Recursion is where the class breaks</span>
+      <div class="topic"><span>Loops</span><span class="bar"><span class="u" style="width:81%"></span><span class="p" style="width:13%"></span><span class="g" style="width:6%"></span></span><span class="pct">81%</span></div>
+      <div class="topic"><span>Functions</span><span class="bar"><span class="u" style="width:69%"></span><span class="p" style="width:20%"></span><span class="g" style="width:11%"></span></span><span class="pct">69%</span></div>
+      <div class="topic"><span>Edge cases</span><span class="bar"><span class="u" style="width:55%"></span><span class="p" style="width:26%"></span><span class="g" style="width:19%"></span></span><span class="pct">55%</span></div>
+      <div class="topic"><span>Recursion</span><span class="bar"><span class="u" style="width:30%"></span><span class="p" style="width:29%"></span><span class="g" style="width:41%"></span></span><span class="pct low">30%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft problem">
+  <div class="wrap section problem-pad grid cols-2">
+    <h2>A written answer no longer tells you who understood it.</h2>
+    <div class="stack problem-body">
+      <p>Code, essays and problem sets can be produced without being understood. A one-on-one viva still shows the difference in a few minutes, but no one has time to run one for every student in a 400-person course.</p>
+      <p>Aloud runs that conversation for you, for every student, on the material you choose. You stay in charge of the questions and of every result.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="wrap section stack" style="gap: 36px">
+  <div class="intro">
+    <span class="eyebrow">How it works</span>
+    <h2>From lecture notes to a class picture, in four steps</h2>
+  </div>
+  <ol class="plain-list grid cols-4">
+    <li class="card"><span class="step-n">01</span><span class="step-title">Upload what you taught</span><span class="step-text">Lecture notes, slides, readings or code. Aloud finds the ideas students should be able to explain.</span><span class="step-time">About 2 minutes</span></li>
+    <li class="card"><span class="step-n">02</span><span class="step-title">Approve a pool of questions</span><span class="step-text">Questions apply the idea to something new. A second AI pass checks every answer key; you approve.</span><span class="step-time">About 10 minutes</span></li>
+    <li class="card"><span class="step-n">03</span><span class="step-title">Every student talks it through</span><span class="step-text">Each student gets their own draw from the pool and explains out loud. The examiner asks a follow-up when it matters.</span><span class="step-time">About 15 minutes each</span></li>
+    <li class="card"><span class="step-n">04</span><span class="step-title">See who understood</span><span class="step-text">Results per topic and per student, with the words behind each one, as soon as students finish.</span><span class="step-time">Live</span></li>
+  </ol>
+</section>
+
+<section class="dark">
+  <div class="wrap section grid cols-2">
+    <div class="stack" style="gap: 18px">
+      <span class="eyebrow">What you get</span>
+      <h2>Not a grade. A picture of what your class understands.</h2>
+      <ul class="plain-list dark-list">
+        <li>Every topic, every student: understood, partly, or a gap.</li>
+        <li>The exact words behind each result, so you can check it.</li>
+        <li>Which questions the class found hardest, and the mix-ups behind them.</li>
+        <li>Signals worth a look, like long silences. Never automatic verdicts.</li>
+        <li>You can change any result with one click.</li>
+      </ul>
+    </div>
+    <div class="map-card" aria-hidden="true">
+      <div class="map-head"><strong>Class map · Recursion</strong><span class="mono">one dot per student</span></div>
+      <div class="dots" id="dots"></div>
+      <div class="legend"><span><i class="u"></i>Understood</span><span><i class="p"></i>Partly</span><span><i class="g"></i>Gap</span></div>
+      <div class="quote-box">"It keeps calling itself, and <mark>I think Python just stops it when it's done</mark>." <span class="note">· no base case: the mix-up behind most gaps</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="subjects" class="wrap section stack" style="gap: 32px">
+  <div class="intro">
+    <span class="eyebrow">Any subject</span>
+    <h2>Questions about your material, in new situations</h2>
+    <p style="font-size: 16px; line-height: 1.55; color: var(--ink-2)">Students don't recite your slides. They apply the idea: a new program, a new case, a new objection.</p>
+  </div>
+  <div class="grid cols-4">
+    <div class="card subject">
+      <span class="label">Computer science</span>
+      <span class="q">This never finishes for n = 5. Find the bug and explain why.</span>
+<div class="code"><span class="kw">def</span> <span class="fn">fact</span>(n):
+  <span class="kw">return</span> n * <span class="fn">fact</span>(n - <span class="num">1</span>)</div>
+    </div>
+    <div class="card subject">
+      <span class="label">Economics</span>
+      <span class="q">A town has one big employer. Could a higher minimum wage raise employment there? Walk through why.</span>
+      <div class="hint">Listen for: monopsony, wage below marginal product, labour supply</div>
+    </div>
+    <div class="card subject">
+      <span class="label">Philosophy</span>
+      <span class="q">A city makes motorcyclists wear helmets. Would Mill accept this law?</span>
+      <div class="cite">"His own good, either physical or moral, is not a sufficient warrant."</div>
+    </div>
+    <div class="card subject">
+      <span class="label">Biology</span>
+      <span class="q">A red blood cell is dropped into pure water. What happens to it, and why?</span>
+      <div class="hint">Listen for: osmosis, water moves into the cell, no cell wall, it bursts</div>
+    </div>
+  </div>
+</section>
+
+<section class="soft">
+  <div class="wrap section stack" style="gap: 32px">
+    <h2 style="max-width: 640px">Built for real courses</h2>
+    <div class="grid cols-3" style="gap: 14px">
+      <div class="fact"><strong>Large classes</strong><span>Sections, hundreds of students, search and filters. Built for a 400-student intro course.</span></div>
+      <div class="fact"><strong>Different questions per student</strong><span>Each student draws from a pool, so answers can't be passed around.</span></div>
+      <div class="fact"><strong>Weak wifi</strong><span>Recording keeps going if the connection drops. Students pick up with a fresh question.</span></div>
+      <div class="fact"><strong>Accommodations</strong><span>Extra time, questions read aloud, or typed answers, confirmed by you.</span></div>
+      <div class="fact"><strong>You approve every question</strong><span>Nothing reaches students until you do, and you can rewrite anything.</span></div>
+      <div class="fact"><strong>Your class list</strong><span>Import it once. Students sign in with their university email.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="trust" class="wrap section grid cols-2">
+  <div class="stack" style="gap: 12px">
+    <span class="eyebrow">Student data</span>
+    <h2>Recordings belong to your course, not to us</h2>
+  </div>
+  <ul class="plain-list checks">
+    <li>Only you and your teaching assistants see transcripts and recordings.</li>
+    <li>You choose how long recordings are kept. They’re deleted automatically after that.</li>
+    <li>Student answers are never used to train AI models.</li>
+    <li>Students agree to recording before they start, and can ask for accommodations.</li>
+  </ul>
+</section>
+
+<section id="professors" class="wrap section quotes stack" style="gap: 28px">
+  <span class="eyebrow">From professors</span>
+  <div class="grid cols-3">
+    <figure class="quote">
+      <blockquote>“One hundred percent of professors are experiencing an existential crisis regarding AI assessments and would be highly interested in helpful technological solutions.”</blockquote>
+      <figcaption><strong>Professor Jonathan Hunt</strong><span>English, USF</span></figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>“Such a tool would solve the challenge of providing individualized attention in large classes by zeroing in on specific student and class weaknesses.”</blockquote>
+      <figcaption><strong>Professor Clare Nguyen</strong><span>Computer Science, De Anza College</span></figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>“Teaching has become significantly more difficult and highlighted the ongoing challenge of determining the exact extent of AI use in student submissions.”</blockquote>
+      <figcaption><strong>Professor Marty Nash</strong><span>English, Las Positas College</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="stack" style="gap: 10px">
+      <h2>Run your next lab as a viva.</h2>
+      <p>Set up a course in a few minutes. We'll help you with the first assignment.</p>
+    </div>
+    <button type="button" class="btn" data-open-access>Request early access</button>
+  </div>
+</section>
+</main>
+
+<footer class="wrap site-footer">
+  <span>© 2026 Aloud</span>
+  <nav aria-label="Footer">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="mailto:ayushsurana3@gmail.com">ayushsurana3@gmail.com</a>
+  </nav>
+</footer>
+
+<dialog class="dialog" id="access" aria-labelledby="ea-title">
+  <div class="dialog-inner">
+    <div class="dialog-head">
+      <h2 id="ea-title">Request early access</h2>
+      <button type="button" class="close" data-close aria-label="Close">×</button>
+    </div>
+    <form class="ea-form" novalidate>
+      <label for="ea-email">Leave your email and we’ll contact you.</label>
+      <input id="ea-email" name="email" type="email" required autocomplete="email" maxlength="254" placeholder="you@university.edu" autofocus>
+      <div class="hp" aria-hidden="true"><label for="ea-website">Website</label><input id="ea-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="ea-error" role="alert"></p>
+      <button type="submit" class="btn">Request access</button>
+    </form>
+    <p class="ea-done" role="status" hidden>Thanks. We’ll be in touch soon. Check your inbox for a confirmation email.</p>
+  </div>
+</dialog>
+
+</body>
+</html>
