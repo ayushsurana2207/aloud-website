@@ -39,3 +39,8 @@
 **Decision:** Thank-you mail is sent from `Aloud <support@aloudedu.com>` with reply-to `support@aloudedu.com`, and that address replaces the temporary Gmail contact on all pages. Supersedes the temporary Resend test sender (`onboarding@resend.dev`) noted in "Resend for the thank-you email".
 **Why:** The owner bought aloudedu.com; a verified own-domain sender delivers to anyone and lets professors reply straight to support.
 **Alternatives considered:** A separate `noreply@`/`hello@` sender — the owner has one support mailbox, and replies to the thank-you mail should reach it.
+
+## 2026-11-01 — Hero cards in normal flow instead of a fixed 700px box
+**Decision:** The hero's two mockup cards are stacked in normal flow (viva card top-right, class card overlapping its bottom-left padding by 14px), and the hero stays two-column down to ~900px (columns min 400px, was 480px).
+**Why:** The prototype pinned the cards to a fixed 700px-tall box, which left ~125px of empty space above and below the text, a gap between the cards, and a lone narrow column on 1024px screens.
+**Alternatives considered:** Keeping absolute positioning with a smaller min-height — breaks whenever text wraps differently; a deeper overlap — covers the examiner's reply bubble.
