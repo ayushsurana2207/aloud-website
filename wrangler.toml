@@ -10,8 +10,7 @@ REPLY_TO = "support@aloudedu.com"
 [[d1_databases]]
 binding = "DB"
 database_name = "aloud-early-access"
-# Replace after running: npx wrangler d1 create aloud-early-access
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "e498af88-3d22-4516-a9c4-9a36f38bc7f8"
 migrations_dir = "migrations"
 
 # Secret (wrangler pages secret put RESEND_API_KEY, or .dev.vars locally): RESEND_API_KEY
