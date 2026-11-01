@@ -26,12 +26,18 @@ const error = dialog.querySelector('.ea-error');
 const done = dialog.querySelector('.ea-done');
 const submit = form.querySelector('[type=submit]');
 
-document.querySelectorAll('[data-open-access]').forEach((btn) => btn.addEventListener('click', () => {
+const openAccess = () => {
   form.hidden = false;
   done.hidden = true;
   error.textContent = '';
   dialog.showModal();
-}));
+};
+document.querySelectorAll('[data-open-access]').forEach((btn) => btn.addEventListener('click', openAccess));
+// The Privacy/Terms pages link here as /#access so their CTA opens the same form.
+if (location.hash === '#access') {
+  history.replaceState(null, '', location.pathname);
+  openAccess();
+}
 dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); }); // backdrop click
 

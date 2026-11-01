@@ -29,3 +29,8 @@
 **Decision:** Pin `wrangler@3.114.17`.
 **Why:** Wrangler 4 needs Node 22; the dev machine has Node 20. Upgrade to Wrangler 4 after upgrading Node.
 **Alternatives considered:** Upgrading system Node — not done without the owner's go-ahead.
+
+## 2026-11-01 — Privacy Policy and Terms of Use pages
+**Decision:** Add static `public/privacy.html` and `public/terms.html` in the site's design, written to match what the site actually does (email + user agent stored in D1, Resend for mail, Google Fonts, no cookies or analytics). The popup links to both; legal-page CTAs link to `/#access`, which opens the form on the home page.
+**Why:** The site collects emails, so it needs a privacy policy before launch. Describing only real data flows keeps the policy accurate.
+**Alternatives considered:** Generated boilerplate from a policy generator — generic and lists practices we don't have. Not lawyer-reviewed; no governing-law clause until the company's legal entity and jurisdiction are set.

@@ -189,6 +189,22 @@ h2 { font-size: clamp(28px, 1.5vw + 22px, 36px); line-height: 1.12; letter-spaci
 .ea-error { color: var(--rust-text); font-size: 14px; }
 .ea-error:empty { display: none; }
 .ea-done { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.ea-legal { font-size: 12.5px; line-height: 1.5; color: var(--muted); }
+.ea-legal a { color: var(--ink-2); }
+
+/* Privacy / Terms */
+.legal { max-width: 760px; padding-top: 72px; padding-bottom: 80px; }
+.legal h1 { font-size: clamp(36px, 3vw + 22px, 48px); line-height: 1.08; letter-spacing: -0.035em; }
+.legal .updated { margin-top: 14px; font-size: 14px; color: var(--muted); }
+.legal .summary { margin-top: 28px; padding: 18px 20px; border-radius: 14px; background: var(--teal-soft); color: var(--teal-ink); font-size: 15.5px; line-height: 1.6; }
+.legal h2 { margin-top: 44px; font-size: 22px; letter-spacing: -0.02em; }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; color: var(--ink-2); }
+.legal p { margin-top: 12px; }
+.legal ul { margin: 12px 0 0; padding-left: 22px; }
+.legal li + li { margin-top: 6px; }
+.legal strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .legal { padding-top: 48px; padding-bottom: 56px; } }
+
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 /* Tablet and phone */
