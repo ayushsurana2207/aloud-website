@@ -7,7 +7,7 @@
     "db:migrate:local": "wrangler d1 migrations apply aloud-early-access --local",
     "db:migrate:remote": "wrangler d1 migrations apply aloud-early-access --remote",
     "test": "node --test test/",
-    "deploy": "wrangler pages deploy"
+    "deploy": "wrangler pages deploy --branch main"
   },
   "devDependencies": {
     "wrangler": "3.114.17"

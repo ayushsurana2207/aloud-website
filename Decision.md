@@ -44,3 +44,8 @@
 **Decision:** The hero's two mockup cards are stacked in normal flow (viva card top-right, class card overlapping its bottom-left padding by 14px), and the hero stays two-column down to ~900px (columns min 400px, was 480px).
 **Why:** The prototype pinned the cards to a fixed 700px-tall box, which left ~125px of empty space above and below the text, a gap between the cards, and a lone narrow column on 1024px screens.
 **Alternatives considered:** Keeping absolute positioning with a smaller min-height — breaks whenever text wraps differently; a deeper overlap — covers the examiner's reply bubble.
+
+## 2026-11-01 — Deploy with `wrangler pages deploy`; DNS stays at Network Solutions
+**Decision:** The Pages project `aloud-website` (address `aloud-website-9e1.pages.dev`) is deployed from the CLI (`npm run deploy`), not via the Cloudflare GitHub integration. The site lives at `www.aloudedu.com` via a CNAME at Network Solutions; the bare `aloudedu.com` uses Network Solutions forwarding to `https://www.aloudedu.com`.
+**Why:** Simplest setup for the owner: no nameserver move, so the existing support@ mailbox and Resend DNS records are untouched.
+**Alternatives considered:** Moving DNS to Cloudflare — enables HTTPS on the bare domain and git-push deploys, but risks email records during the move. Git integration — can be added later.
