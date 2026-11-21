@@ -70,3 +70,8 @@
 **Decision:** Added robots.txt, sitemap.xml, a real 404.html (Pages otherwise serves index.html with 200 for every unknown path — soft 404s), canonical links on every page, OG/Twitter image tags with a generated og.png, Organization JSON-LD, real favicon/touch icons, and `functions/_middleware.js` that 301s `aloudedu.com` → `www.aloudedu.com` and sends `X-Robots-Tag: noindex` on `*.pages.dev`.
 **Why:** The same page was indexable at three hosts and crawlers saw no robots/sitemap. Visible copy left unchanged on purpose — only machine-facing tags were added.
 **Alternatives considered:** Apex redirect via Cloudflare/Network Solutions dashboard rules (works, but lives outside the repo and isn't tested); keyword rewrites of title/H1 (deferred — changes the copy's meaning, needs owner input). Middleware runs on every request, costing a Functions invocation per hit; fine for current traffic, revisit with `_routes.json` or a dashboard redirect if Functions quotas matter.
+
+## 2026-11-21 — Homepage title targets search terms; visible copy unchanged
+**Decision:** Title/og:title changed from "Aloud: spoken checks for every student" to "Aloud: spoken viva and oral assessment for every student". No on-page copy changed.
+**Why:** "Spoken checks" is not a searched phrase; "viva" and "oral assessment" are what professors search. Body copy already uses viva/exam/university, so rewriting headings wasn't worth changing the voice.
+**Alternatives considered:** Keyword rewrites of the H1/H2s (rejected: changes tone, little gain); revisit once Search Console shows real queries.
