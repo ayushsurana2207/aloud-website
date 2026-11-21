@@ -81,6 +81,12 @@ h2 { font-size: clamp(28px, 1.5vw + 22px, 36px); line-height: 1.12; letter-spaci
 .lead { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 520px; text-wrap: pretty; }
 .small-note { font-size: 13.5px; color: var(--muted); }
 
+/* Supporters strip */
+.supporters { padding-top: 24px; padding-bottom: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 32px; }
+.supporters-label { font-size: 13px; color: var(--muted); }
+.supporters-list { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 40px; }
+.supporters-list img { display: block; }
+
 .hero-visual { display: flex; flex-direction: column; }
 .viva-card {
   align-self: flex-end; width: 88%; border-radius: 18px; background: var(--bg-card); border: 1px solid var(--line-2);

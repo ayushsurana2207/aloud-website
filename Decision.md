@@ -49,3 +49,19 @@
 **Decision:** The Pages project `aloud-website` (address `aloud-website-9e1.pages.dev`) is deployed from the CLI (`npm run deploy`), not via the Cloudflare GitHub integration. The site lives at `www.aloudedu.com` via a CNAME at Network Solutions; the bare `aloudedu.com` uses Network Solutions forwarding to `https://www.aloudedu.com`.
 **Why:** Simplest setup for the owner: no nameserver move, so the existing support@ mailbox and Resend DNS records are untouched.
 **Alternatives considered:** Moving DNS to Cloudflare — enables HTTPS on the bare domain and git-push deploys, but risks email records during the move. Git integration — can be added later.
+
+## 2026-11-21 — Show grant supporters as text, not logos
+**Decision:** Added a "Supported by grants from NVIDIA, Cartesia, AWS Activate" strip directly under the hero, rendered as plain text wordmarks.
+**Why:** Social proof belongs near the top; text needs no asset files and avoids breaching each company's logo-usage rules until we have their approved assets.
+**Alternatives considered:** Official logos (need brand approval/assets per program); placing it in the footer (too low to be seen).
+
+## 2026-11-21 — Supporter strip now uses logos (supersedes "Show grant supporters as text, not logos")
+**Decision:** Replaced the text wordmarks with SVG logos in `public/logos/`, rendered monochrome (black at 60% opacity) via CSS filter.
+**Why:** User asked for logos. Monochrome keeps three different brand palettes from clashing with the site's teal/ink palette — the standard "supported by" treatment.
+**Sources:** NVIDIA and AWS SVGs from Wikimedia Commons (`Nvidia_logo.svg`, `Amazon_Web_Services_Logo.svg`); Cartesia SVG taken from the header of cartesia.ai.
+**Alternatives considered:** Full-colour logos (clash with the palette); Simple Icons set (NVIDIA/AWS icons only, no Cartesia).
+
+## 2026-11-21 — Supporter logos in original brand colours (supersedes the monochrome entry above)
+**Decision:** Removed the monochrome filter; logos now show brand colours — NVIDIA green eye (#76B900) + black wordmark, Cartesia verdant mark (#309D4B, from cartesia.ai CSS) + black wordmark, AWS navy/orange as published.
+**Why:** User asked for original colours. Program-specific badges (NVIDIA Inception member badge, AWS Activate) are not publicly downloadable — Inception's is in the member portal, AWS's via Partner Central — so company logos are used until those files are supplied.
+**Alternatives considered:** Third-party "AWS Activate" architecture icon (not an official program mark).
