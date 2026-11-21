@@ -32,7 +32,7 @@ The Resend key is a Pages secret: `npx wrangler pages secret put RESEND_API_KEY 
 
 ## Domain: aloudedu.com
 1. **Email sending:** in Resend → Domains, add `aloudedu.com` and add the DNS records it shows (SPF, DKIM, and optionally DMARC) at your DNS provider. Wait for "Verified".
-2. **Website:** DNS stays at Network Solutions. In the Pages project → Custom domains, add `www.aloudedu.com`; at Network Solutions add a CNAME `www` → `aloud-website-9e1.pages.dev`, and forward `aloudedu.com` to `https://www.aloudedu.com`.
+2. **Website:** DNS is on Cloudflare (nameservers `gina`/`devin.ns.cloudflare.com`; registrar is Network Solutions), in the same Cloudflare account that deploys the Pages project. In the Pages project → Custom domains, add `www.aloudedu.com` (and `aloudedu.com`). `functions/_middleware.js` 301-redirects `aloudedu.com` → `https://www.aloudedu.com`.
 3. Sender, reply-to and the site's contact address are all `support@aloudedu.com`. To change them, edit `wrangler.toml` and the footers of the three pages in `public/`.
 
 See stored emails in production: `npx wrangler d1 execute aloud-early-access --remote --command "SELECT email, created_at FROM early_access ORDER BY id DESC"`
