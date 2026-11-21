@@ -65,3 +65,8 @@
 **Decision:** Removed the monochrome filter; logos now show brand colours — NVIDIA green eye (#76B900) + black wordmark, Cartesia verdant mark (#309D4B, from cartesia.ai CSS) + black wordmark, AWS navy/orange as published.
 **Why:** User asked for original colours. Program-specific badges (NVIDIA Inception member badge, AWS Activate) are not publicly downloadable — Inception's is in the member portal, AWS's via Partner Central — so company logos are used until those files are supplied.
 **Alternatives considered:** Third-party "AWS Activate" architecture icon (not an official program mark).
+
+## 2026-11-21 — Technical SEO baseline
+**Decision:** Added robots.txt, sitemap.xml, a real 404.html (Pages otherwise serves index.html with 200 for every unknown path — soft 404s), canonical links on every page, OG/Twitter image tags with a generated og.png, Organization JSON-LD, real favicon/touch icons, and `functions/_middleware.js` that 301s `aloudedu.com` → `www.aloudedu.com` and sends `X-Robots-Tag: noindex` on `*.pages.dev`.
+**Why:** The same page was indexable at three hosts and crawlers saw no robots/sitemap. Visible copy left unchanged on purpose — only machine-facing tags were added.
+**Alternatives considered:** Apex redirect via Cloudflare/Network Solutions dashboard rules (works, but lives outside the repo and isn't tested); keyword rewrites of title/H1 (deferred — changes the copy's meaning, needs owner input). Middleware runs on every request, costing a Functions invocation per hit; fine for current traffic, revisit with `_routes.json` or a dashboard redirect if Functions quotas matter.
